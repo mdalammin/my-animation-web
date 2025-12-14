@@ -1,5 +1,7 @@
+import BenefitsAndRoles from "@/components/BenefitsAndRoles";
 import HeroSection from "@/components/common/HeroSection";
 import NavigationMenu from "@/components/common/NavigationMenuDemo";
+import TrustedBySlider from "@/components/TrustedBySlider";
 
 export default function Home() {
   return (
@@ -7,9 +9,11 @@ export default function Home() {
         <div className="mt-[20px]">
           <NavigationMenu/>
         </div>
-        
+
         <div>
           <HeroSection/>
+          <TrustedBySlider/>
+          <BenefitsAndRoles/>
         </div>
         
     </div>
