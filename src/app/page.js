@@ -1,11 +1,17 @@
+import HeroSection from "@/components/common/HeroSection";
 import NavigationMenu from "@/components/common/NavigationMenuDemo";
-import ProductShowcaseSection from "@/components/ProductShowcaseSection";
 
-export default function HeaderWithNavigation() {
+export default function Home() {
   return (
-    <div className="min-h-screen bg-gray-400 mx-auto">
-<NavigationMenu/>
-<ProductShowcaseSection/>
+    <div className="min-h-screen mx-auto">
+        <div className="mt-[20px]">
+          <NavigationMenu/>
+        </div>
+        
+        <div>
+          <HeroSection/>
+        </div>
+        
     </div>
   );
 }
