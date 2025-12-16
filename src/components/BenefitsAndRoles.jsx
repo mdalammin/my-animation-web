@@ -14,6 +14,7 @@ import {
     BarChart3,
     Search,
 } from "lucide-react";
+import PlatformSection from "./PlatformSection";
 
 export default function BenefitsAndRoles() {
     const [activeRole, setActiveRole] = useState("Principal");
@@ -117,13 +118,27 @@ export default function BenefitsAndRoles() {
 
             {/* -------------------- UNIFIED PLATFORM SECTION -------------------- */}
             <section className="py-24 px-4 relative overflow-hidden">
-                {/* Background Wave Effect (Simplified CSS/SVG representation) */}
-                <div className="absolute inset-0 opacity-10 pointer-events-none">
-                    <svg className="absolute w-full h-full" viewBox="0 0 100 100" preserveAspectRatio="none">
-                        <path d="M0 50 Q 50 20 100 50 T 200 50" stroke="white" fill="transparent" strokeWidth="0.5" />
-                        <path d="M0 60 Q 50 30 100 60 T 200 60" stroke="white" fill="transparent" strokeWidth="0.5" />
-                        <path d="M0 70 Q 50 40 100 70 T 200 70" stroke="red" fill="transparent" strokeWidth="0.5" />
+                {/* Background Mesh/Wave Effect */}
+                <div className="absolute inset-0 pointer-events-none">
+                    <svg className="absolute w-full h-full opacity-40" viewBox="0 0 100 100" preserveAspectRatio="none">
+                        {/* Red/Blue Mesh Lines - Simulated */}
+                        <path d="M0 20 Q 50 0 100 20" stroke="#ef4444" fill="transparent" strokeWidth="0.1" />
+                        <path d="M0 25 Q 50 5 100 25" stroke="#3b82f6" fill="transparent" strokeWidth="0.1" />
+                        <path d="M0 30 Q 50 10 100 30" stroke="#ef4444" fill="transparent" strokeWidth="0.1" />
+                        <path d="M0 35 Q 50 15 100 35" stroke="#3b82f6" fill="transparent" strokeWidth="0.1" />
+
+                        <path d="M0 40 Q 50 60 100 40" stroke="#ef4444" fill="transparent" strokeWidth="0.1" />
+                        <path d="M0 45 Q 50 65 100 45" stroke="#3b82f6" fill="transparent" strokeWidth="0.1" />
+                        <path d="M0 50 Q 50 70 100 50" stroke="#ef4444" fill="transparent" strokeWidth="0.1" />
+
+                        {/* Vertical-ish lines for mesh effect */}
+                        <path d="M20 0 Q 30 50 20 100" stroke="#ffffff" strokeOpacity="0.05" fill="transparent" strokeWidth="0.1" />
+                        <path d="M40 0 Q 50 50 40 100" stroke="#ffffff" strokeOpacity="0.05" fill="transparent" strokeWidth="0.1" />
+                        <path d="M60 0 Q 70 50 60 100" stroke="#ffffff" strokeOpacity="0.05" fill="transparent" strokeWidth="0.1" />
+                        <path d="M80 0 Q 90 50 80 100" stroke="#ffffff" strokeOpacity="0.05" fill="transparent" strokeWidth="0.1" />
                     </svg>
+                    <div className="absolute inset-0 bg-gradient-to-t from-[#0b0f19] via-transparent to-[#0b0f19]"></div>
+                    <div className="absolute inset-0 bg-gradient-to-r from-[#0b0f19] via-transparent to-[#0b0f19]"></div>
                 </div>
 
 
@@ -136,120 +151,7 @@ export default function BenefitsAndRoles() {
                         community
                     </p>
                 </div>
-
-                {/* Main Interface Container */}
-                <div className="max-w-7xl mx-auto relative z-10">
-                    <div className="border border-white/10 rounded-3xl bg-white/5 backdrop-blur-sm p-6 md:p-12 grid grid-cols-1 lg:grid-cols-12 gap-8">
-
-                        {/* Left Sidebar: Roles */}
-                        <div className="lg:col-span-2 flex flex-col gap-2 border-r border-white/10 pr-6">
-                            {roles.map((role) => (
-                                <button
-                                    key={role.name}
-                                    onClick={() => setActiveRole(role.name)}
-                                    className={`flex flex-col items-center justify-center p-4 rounded-xl transition-all duration-300 gap-2 ${activeRole === role.name
-                                            ? "bg-white/10 text-white shadow-lg"
-                                            : "text-gray-400 hover:text-white hover:bg-white/5"
-                                        }`}
-                                >
-                                    {role.icon}
-                                    <span className="text-sm font-medium">{role.name}</span>
-                                </button>
-                            ))}
-                        </div>
-
-                        {/* Center: Analytics Grid */}
-                        <div className="lg:col-span-6 flex flex-col justify-center">
-                            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                                {[1, 2, 3, 4].map((item) => (
-                                    <div
-                                        key={item}
-                                        className="bg-[#1e2532]/80 border border-white/10 rounded-2xl p-6 hover:shadow-xl transition-shadow backdrop-blur-md"
-                                    >
-                                        <div className="flex items-center gap-3 mb-4">
-                                            <div className="p-2 bg-gradient-to-br from-blue-500 to-cyan-400 rounded-lg">
-                                                <BarChart3 size={20} className="text-white" />
-                                            </div>
-                                            <h4 className="font-semibold text-white">
-                                                Realtime Analytics
-                                            </h4>
-                                        </div>
-                                        <p className="text-sm text-gray-400 leading-relaxed">
-                                            Lorem Ipsum is simply dummy text of the printing and
-                                            typesetting industry.
-                                        </p>
-                                    </div>
-                                ))}
-                            </div>
-                            <div className="mt-8 flex justify-center md:justify-start">
-                                <button className="px-6 py-3 rounded-full border border-gray-600 text-sm font-medium hover:bg-white hoer:text-black hover:border-white transition-colors flex items-center gap-2">
-                                    Explore all Features <span className="text-lg">→</span>
-                                </button>
-                            </div>
-                        </div>
-
-                        {/* Right: Phone Mockup */}
-                        <div className="lg:col-span-4 flex justify-center items-center relative">
-                            {/* Hand Mockup (Simulated with CSS shapes/gradients or simplified) */}
-                            {/* Since I can't easily draw a hand with CSS, I'll focus on the phone frame and screen */}
-
-                            <div className="relative w-[280px] h-[580px] bg-black rounded-[3rem] border-[8px] border-gray-800 shadow-2xl overflow-hidden transform rotate-2 hover:rotate-0 transition-transform duration-500">
-                                {/* Top Notch */}
-                                <div className="absolute top-0 left-1/2 -translate-x-1/2 w-32 h-6 bg-black rounded-b-xl z-20"></div>
-
-                                {/* Screen Content */}
-                                <div className="w-full h-full bg-white text-gray-800 overflow-y-auto pt-8 pb-4 px-4">
-                                    {/* Header */}
-                                    <div className="flex justify-between items-center mb-6">
-                                        <h3 className="text-sm font-bold">9:30</h3>
-                                        <div className="flex gap-1">
-                                            <span className="w-3 h-3 bg-gray-300 rounded-full"></span>
-                                            <span className="w-3 h-3 bg-gray-800 rounded-full"></span>
-                                        </div>
-                                    </div>
-
-                                    {/* Profile */}
-                                    <div className="bg-pink-50 rounded-2xl p-4 mb-4 text-center">
-                                        <div className="w-16 h-16 bg-gray-300 rounded-full mx-auto mb-2 border-2 border-white shadow-sm"></div>
-                                        <h4 className="font-bold text-sm">Aparna Jain</h4>
-                                        <p className="text-xs text-gray-500">@aparna.jain</p>
-
-                                        <div className="grid grid-cols-2 gap-2 mt-4 text-left">
-                                            <div className="bg-white p-2 rounded-lg text-[10px]">
-                                                <span className="block text-gray-400">Class</span>
-                                                <span className="font-bold">12</span>
-                                            </div>
-                                            <div className="bg-white p-2 rounded-lg text-[10px]">
-                                                <span className="block text-gray-400">Section</span>
-                                                <span className="font-bold">A</span>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    {/* Sections */}
-                                    <div className="bg-gray-50 rounded-xl p-3 mb-2">
-                                        <div className="flex justify-between items-center mb-2">
-                                            <span className="text-xs font-bold">Today's School</span>
-                                            <span className="text-[10px] bg-green-100 text-green-600 px-2 py-0.5 rounded-full">Open</span>
-                                        </div>
-                                        <p className="text-[10px] text-gray-500">07:00 AM to 12:30 PM</p>
-                                    </div>
-
-                                    {/* Icons Grid */}
-                                    <div className="grid grid-cols-3 gap-2 mt-4">
-                                        {[1, 2, 3].map(i => (
-                                            <div key={i} className="aspect-square bg-white rounded-xl shadow-sm flex flex-col items-center justify-center p-2">
-                                                <div className="w-8 h-8 bg-purple-50 rounded-full mb-1"></div>
-                                                <div className="h-2 w-12 bg-gray-100 rounded"></div>
-                                            </div>
-                                        ))}
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
+                <PlatformSection />
             </section>
         </div>
     );
