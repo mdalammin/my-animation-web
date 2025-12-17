@@ -61,7 +61,7 @@ export default function PlatformSection() {
 
             {/* Main Container */}
             <div className="max-w-[1300px] mx-auto relative ">
-                <div className=" border border-white/10 rounded-[2.5rem] overflow-hidden shadow-2xl flex flex-col lg:flex-row min-h-[600px]
+                <div className="border-[1.5px] border-solid border-[#FFFFFF80] rounded-[2.5rem] overflow-hidden shadow-2xl flex flex-col lg:flex-row min-h-[600px]
                 bg-[linear-gradient(106.76deg,rgba(31,185,232,0.1)_11.57%,rgba(222,70,70,0.1)_88.65%)]">
 
                     {/* Left Sidebar */}
@@ -96,7 +96,7 @@ export default function PlatformSection() {
                                         className="bg-[#1c222e]/90 backdrop-blur-sm border border-white/5 rounded-2xl p-6 hover:bg-[#232a38] transition-colors"
                                     >
                                         <div className="flex items-center gap-3 mb-3">
-                                            <div className="p-2 bg-gradient-to-br from-[#ef4444] to-[#f97316] rounded-lg">
+                                            <div className="p-2 bg-gradient-to-br from-[#ef4444] to-transparent rounded-lg">
                                                 <BarChart3 size={18} className="text-white" />
                                             </div>
                                             <h4 className="font-semibold text-white text-sm">
@@ -112,10 +112,19 @@ export default function PlatformSection() {
                             </div>
 
                             <div className="mt-10 flex justify-center">
-                                <button className="group relative px-8 py-3 rounded-full border border-gray-600 text-sm text-white font-medium overflow-hidden transition-all hover:border-white hover:bg-white/5">
+                                <button className="group relative px-8 py-3 rounded-full text-sm text-white font-medium overflow-hidden transition-all hover:bg-white/5">
+                                    {/* Gradient border using pseudo-element */}
+                                    <div className="absolute inset-0 rounded-full p-[0px]">
+                                        <div className="w-full h-full bg-gradient-to-r from-[#EA3D34] to-[#1FB9E8] rounded-full"></div>
+                                    </div>
+
+                                    {/* Content */}
                                     <span className="relative z-10 flex items-center gap-2">
                                         Explore all Features <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
                                     </span>
+
+                                    {/* Button background (optional) */}
+                                    <div className="absolute inset-[1px] rounded-full bg-gray-900 group-hover:bg-gray-800/50 transition-colors"></div>
                                 </button>
                             </div>
                         </div>

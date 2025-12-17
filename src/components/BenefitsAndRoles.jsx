@@ -1,6 +1,11 @@
 "use client";
 
 import React, { useState } from "react";
+import bg1 from "../assets/bg-benefits/bg1.png";
+import bg2 from "../assets/bg-benefits/bg2.png";
+import bg3 from "../assets/bg-benefits/bg3.png";
+import bg4 from "../assets/bg-benefits/bg4.png";
+
 import {
     Users,
     LayoutDashboard,
@@ -29,90 +34,114 @@ export default function BenefitsAndRoles() {
     return (
         <div className="bg-[#0b0f19] text-white min-h-screen font-sans">
             {/* -------------------- BENEFITS SECTION -------------------- */}
-            <section className="py-16 px-4 max-w-7xl mx-auto">
-                <h2 className="text-3xl font-bold mb-2">
-                    Benefits of Using Schooldeeds
-                </h2>
-                <p className="text-gray-400 mb-12">
-                    Packed with Features that makes your school management easy
-                </p>
+            <section className="py-16 mx-auto">
+                <div className="max-w-7xl mx-auto px-4 mb-12">
+                    <h2 className="text-3xl font-bold mb-2">
+                        Benefits of Using Schooldeeds
+                    </h2>
+                    <p className="text-gray-400">
+                        Packed with Features that makes your school management easy
+                    </p>
+                </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-4 h-[400px]">
-                    {/* Card 1: Access Anywhere (Gradient & Text) */}
-                    <div className="col-span-1 md:col-span-1 relative overflow-hidden group ">
-                        <div className="absolute inset-0 bg-[linear-gradient(0deg,rgba(30,30,30,0.4),rgba(30,30,30,0.4)),linear-gradient(106.76deg,rgba(31,185,232,0.4)_11.57%,rgba(222,70,70,0.4)_88.65%)] backdrop-blur-[20px] opacity-90 transition-opacity group-hover:opacity-100"></div>
-                        <div className="relative z-10 h-full flex flex-col justify-center items-center text-center p-6">
-                            <div className="mb-4 text-white">
-                                <Share2 size={48} strokeWidth={1.5} />
+                {/* Main Grid Container */}
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 min-h-[500px] max-w-7xl mx-auto">
+
+                    {/* ---------------- CARD 1: Access Anywhere ---------------- */}
+                    <div className="relative group overflow-hidden border-r border-gray-800/30 w-[325px] h-[345px] z-10">
+                        {/* Background Image */}
+                        <div
+                            className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110"
+                            style={{ backgroundImage: `url(${bg1.src || bg1})` }}
+                        ></div>
+
+                        {/* Overlay: Dark Red/Brown Gradient */}
+                        <div className="absolute inset-0 bg-[linear-gradient(0deg,rgba(30,30,30,0.4),rgba(30,30,30,0.4)),linear-gradient(106.76deg,rgba(31,185,232,0.4)_11.57%,rgba(222,70,70,0.4)_88.65%)] backdrop-blur-lg"></div>
+
+                        {/* Content */}
+                        <div className="relative z-10 h-full flex flex-col justify-center items-center text-center p-6 text-white py-[40px]">
+                            <div className="mb-4">
+                                <Share2 size={40} strokeWidth={1.5} />
                             </div>
-                            <h3 className="text-xl font-semibold mb-2">Access Anywhere</h3>
-                            <p className="text-sm text-gray-300 mt-6 leading-relaxed group-hover:opacity-100 transition-opacity duration-300 absolute bottom-12 px-4">
+                            <h3 className="text-lg font-semibold leading-tight mb-4">
+                                Access<br />Anywhere
+                            </h3>
+                            <p className="text-sm font-light leading-relaxed max-w-[200px]">
                                 Lorem Ipsum is simply dummy text of the printing and typesetting
-                                industry. Lorem Ipsum has been the industry's standard dummy text
-                                ever since the 1500s.
+                                industry. Lorem Ipsum has been the industry's standard dummy
                             </p>
                         </div>
                     </div>
 
-                    {/* Card 2: Unlimited Users (Image Placeholder) */}
-                    <div className="col-span-1 md:col-span-1 relative overflow-hidden group">
-                        {/* Placeholder for Image */}
-                        <div className="absolute inset-0 bg-gray-800">
-                            <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
-                            {/* Simulated Image Content */}
-                            <div className="w-full h-full flex items-center justify-center bg-[#2a303c]">
-                                <span className="text-gray-600">Image: Office/People</span>
-                            </div>
-                        </div>
-                        <div className="absolute inset-0 bg-gradient-to-t from-[#9333ea]/60 to-transparent opacity-60"></div>
+                    {/* ---------------- CARD 2: Unlimited Users ---------------- */}
+                    <div className="relative group overflow-hidden border-r border-gray-800/30 w-[325px] h-[345px] z-20">
+                        {/* Background Image */}
+                        <div
+                            className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110"
+                            style={{ backgroundImage: `url(${bg2.src || bg2})` }}
+                        ></div>
 
-                        <div className="relative z-10 h-full flex flex-col justify-center items-center text-center p-6 pointer-events-none">
-                            <div className="mb-4">
-                                <Users size={48} strokeWidth={1.5} />
-                            </div>
-                            <h3 className="text-xl font-semibold">Unlimited Users</h3>
-                        </div>
-                    </div>
+                        {/* Overlay: Left-side Teal/Cyan curve effect 
+                            Using a radial gradient shifted to the left to simulate the curve */}
+                        <div className="absolute top-0 left-0 w-[60%] h-[50%] rounded-br-[81px] bg-[linear-gradient(0deg,rgba(30,30,30,0.4),rgba(30,30,30,0.4)),linear-gradient(106.76deg,rgba(31,185,232,0.4)_11.57%,rgba(222,70,70,0.4)_88.65%)] backdrop-blur-[30px] opacity-95"></div>
 
-                    {/* Card 3: Transparent Pricing (Image Placeholder) */}
-                    <div className="col-span-1 md:col-span-1 relative overflow-hidden group">
-                        <div className="absolute inset-0 bg-gray-800">
-                            <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
-                            <div className="w-full h-full flex items-center justify-center bg-[#252b36]">
-                                <span className="text-gray-600">Image: Calculator/Finance</span>
+                        {/* Content */}
+                        <div className="absolute bottom-23 left-7 z-10 h-full flex flex-col justify-center items-center text-center p-6">
+                            <div className="mb-2">
+                                <Users size={40} strokeWidth={1.5} />
                             </div>
-                        </div>
-                        <div className="absolute inset-0 bg-gradient-to-t from-[#0ea5e9]/60 to-transparent opacity-60"></div>
-
-                        <div className="relative z-10 h-full flex flex-col justify-center items-center text-center p-6 pointer-events-none">
-                            <div className="mb-4">
-                                <Wallet size={48} strokeWidth={1.5} />
-                            </div>
-                            <h3 className="text-xl font-semibold">Transparent Pricing</h3>
+                            <h3 className="text-lg font-semibold leading-tight">
+                                Unlimited<br />Users
+                            </h3>
                         </div>
                     </div>
 
+                    {/* ---------------- CARD 3: Transparent Pricing ---------------- */}
+                    <div className="relative group overflow-hidden border-r border-gray-800/30 w-[325px] h-[345px] z-30">
+                        {/* Background Image */}
+                        <div
+                            className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110"
+                            style={{ backgroundImage: `url(${bg3.src || bg3})` }}
+                        ></div>
 
-                    {/* Card 4: Full-feature Included (Image Placeholder with specific curve) */}
-                    <div className="col-span-1 md:col-span-1 relative overflow-hidden group">
-                        <div className="absolute inset-0 bg-gray-800">
-                            <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
-                            <div className="w-full h-full flex items-center justify-center bg-[#1e2330]">
-                                <span className="text-gray-600">Image: Dashboard</span>
+                        {/* Overlay: Right-side Blue curve effect 
+                             Simulating the "bubble" from the right side */}
+                        <div className="absolute top-0 right-0 w-[60%] h-[50%] rounded-bl-[81px] bg-[linear-gradient(0deg,rgba(30,30,30,0.4),rgba(30,30,30,0.4)),linear-gradient(106.76deg,rgba(31,185,232,0.4)_11.57%,rgba(222,70,70,0.4)_88.65%)] backdrop-blur-[30px] opacity-95"></div>
+
+                        {/* Content */}
+                        <div className="absolute -top-24 right-4 z-10 h-full flex flex-col justify-center items-center text-center p-6">
+                            <div className="mb-2">
+                                <Wallet size={40} strokeWidth={1.5} />
                             </div>
-                        </div>
-
-                        {/* The curved overlay effect at bottom right */}
-                        <div className="absolute bottom-0 right-0 w-full h-[60%] bg-gradient-to-tl from-[#e11d48]/80 to-transparent rounded-tl-[100px]"></div>
-
-
-                        <div className="relative z-10 h-full flex flex-col justify-end items-center text-center p-6 pb-12 pointer-events-none">
-                            <div className="mb-4">
-                                <Settings size={48} strokeWidth={1.5} />
-                            </div>
-                            <h3 className="text-xl font-semibold">Full-feature Included</h3>
+                            <h3 className="text-lg font-semibold leading-tight">
+                                Transparent<br />Pricing
+                            </h3>
                         </div>
                     </div>
+
+                    {/* ---------------- CARD 4: Full-feature Included ---------------- */}
+                    <div className="relative group overflow-hidden w-[325px] h-[345px] z-90">
+                        {/* Background Image */}
+                        <div
+                            className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110"
+                            style={{ backgroundImage: `url(${bg4.src || bg4})` }}
+                        ></div>
+
+                        {/* Overlay: Bottom-Right Rounded Shape */}
+                        <div className="absolute bottom-0 right-0 w-[60%] h-[50%] rounded-tl-[81px] bg-[linear-gradient(0deg,rgba(30,30,30,0.4),rgba(30,30,30,0.4)),linear-gradient(106.76deg,rgba(31,185,232,0.4)_11.57%,rgba(222,70,70,0.4)_88.65%)] backdrop-blur-[30px] opacity-95"></div>
+
+
+                        {/* Content */}
+                        <div className="absolute right-2 top-6 z-10 h-full flex flex-col justify-end items-center text-center p-8 pb-16">
+                            <div className="mb-2">
+                                <Settings size={40} strokeWidth={1.5} />
+                            </div>
+                            <h3 className="text-lg font-semibold leading-tight">
+                                Full-feature<br />Included
+                            </h3>
+                        </div>
+                    </div>
+
                 </div>
             </section>
 
