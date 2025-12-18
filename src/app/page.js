@@ -1,7 +1,9 @@
 import BenefitsAndRoles from "@/components/BenefitsAndRoles";
 import HeroSection from "@/components/common/HeroSection";
 import NavigationMenu from "@/components/common/NavigationMenuDemo";
+import DownloadApp from "@/components/DownloadApp";
 import SeeVideos from "@/components/SeeVideos";
+import SimplePricing from "@/components/SimplePricing";
 import Testimonials from "@/components/Testimonials";
 import TrustedBySlider from "@/components/TrustedBySlider";
 
@@ -24,6 +26,14 @@ export default function Home() {
 
       <div>
         <SeeVideos />
+      </div>
+
+      <div>
+        <SimplePricing />
+      </div>
+
+      <div>
+        <DownloadApp />
       </div>
     </div>
   );
