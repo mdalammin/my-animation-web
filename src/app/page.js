@@ -2,9 +2,11 @@ import BenefitsAndRoles from "@/components/BenefitsAndRoles";
 import HeroSection from "@/components/common/HeroSection";
 import NavigationMenu from "@/components/common/NavigationMenuDemo";
 import DownloadApp from "@/components/DownloadApp";
+import HomeFaq from "@/components/HomeFaq";
 import SeeVideos from "@/components/SeeVideos";
 import SimplePricing from "@/components/SimplePricing";
 import Testimonials from "@/components/Testimonials";
+import TransformForm from "@/components/TransformForm";
 import TrustedBySlider from "@/components/TrustedBySlider";
 
 export default function Home() {
@@ -34,6 +36,14 @@ export default function Home() {
 
       <div>
         <DownloadApp />
+      </div>
+
+      <div>
+        <HomeFaq />
+      </div>
+
+      <div>
+        <TransformForm />
       </div>
     </div>
   );
