@@ -14,6 +14,18 @@ export default function NavigationMenu() {
   // ⭐ ADD URL FOR ALL ITEMS
   const menuItems = [
     {
+      title: "Home",
+      url: "/",
+    },
+    {
+      title: "Subscription",
+      url: "/subscription",
+    },
+    {
+      title: "Certification",
+      url: "/certification",
+    },
+    {
       title: "Products",
       url: "/products",
       items: [
@@ -104,6 +116,10 @@ export default function NavigationMenu() {
         },
       ],
     },
+    {
+      title: "Blogs",
+      url: "/blogs",
+    },
   ];
 
   return (
@@ -138,43 +154,46 @@ export default function NavigationMenu() {
                   className="flex items-center px-4 py-2 text-sm font-medium text-white rounded-md transition"
                 >
                   {menu.title}
-                  <ChevronDown className="ml-1 h-4 w-4" />
+                  {
+                    menu?.items && <ChevronDown className="ml-1 h-4 w-4" />
+                  }
                 </Link>
 
                 {/* MAIN DROPDOWN */}
-                {openMenu === idx && (
+                {menu?.items && openMenu === idx && (
                   <div
                     className="absolute left-0 top-full w-36 bg-white/10 backdrop-blur-sm rounded-[20px] shadow-lg py-2 z-50 animate-fadeSlide"
                     onMouseEnter={() => setOpenMenu(idx)}
                   >
-                    {menu.items.map((item, itemIdx) => (
-                      <div
-                        key={itemIdx}
-                        className="relative"
-                        onMouseEnter={() => item.subItems && setOpenSubMenu(itemIdx)}
-                        onMouseLeave={() => setOpenSubMenu(null)}
-                      >
-                        <Link
-                          href={item.url}
-                          // className="flex justify-between items-center px-4 py-3 transition border-b border-white/10"
-                          className={`flex justify-between items-center py-3 transition mx-4 ${itemIdx < menu.items.length - 1 ? 'border-b border-white/10' : ''}`}
+                    {menu?.items &&
+                      menu?.items?.map((item, itemIdx) => (
+                        <div
+                          key={itemIdx}
+                          className="relative"
+                          onMouseEnter={() => item.subItems && setOpenSubMenu(itemIdx)}
+                          onMouseLeave={() => setOpenSubMenu(null)}
                         >
-                          <div>
-                            <div className="font-medium text-white text-sm">
-                              {item.name}
-                            </div>
-                            {/* <div className="text-gray-500 text-xs mt-1">
+                          <Link
+                            href={item.url}
+                            // className="flex justify-between items-center px-4 py-3 transition border-b border-white/10"
+                            className={`flex justify-between items-center py-3 transition mx-4 ${itemIdx < menu.items.length - 1 ? 'border-b border-white/10' : ''}`}
+                          >
+                            <div>
+                              <div className="font-medium text-white text-sm">
+                                {item.name}
+                              </div>
+                              {/* <div className="text-gray-500 text-xs mt-1">
                               {item.description}
                             </div> */}
-                          </div>
+                            </div>
 
-                          {item.subItems && (
-                            <ChevronRight className="h-4 w-4 text-gray-500" />
-                          )}
-                        </Link>
+                            {item.subItems && (
+                              <ChevronRight className="h-4 w-4 text-gray-500" />
+                            )}
+                          </Link>
 
-                        {/* SUB MENU */}
-                        {/* {openSubMenu === itemIdx && item.subItems && (
+                          {/* SUB MENU */}
+                          {/* {openSubMenu === itemIdx && item.subItems && (
                           <div className="absolute left-full top-0 w-64 bg-white border border-gray-200 rounded-lg shadow-lg py-2 ml-1 animate-fadeSlide">
                             {item.subItems.map((sub, sIdx) => (
                               <Link
@@ -192,37 +211,32 @@ export default function NavigationMenu() {
                             ))}
                           </div>
                         )} */}
-                      </div>
-                    ))}
+                        </div>
+                      ))
+                    }
                   </div>
                 )}
               </div>
             ))}
 
-            <Link href="/pricing" className="px-4 py-2 text-sm text-white  rounded-md">
-              Pricing
-            </Link>
-            <Link href="/about" className="px-4 py-2 text-sm text-white  rounded-md">
-              About
-            </Link>
           </div>
 
           {/* Right Side Buttons */}
           <div className="hidden md:flex items-center space-x-3">
             <Link
-                href="/signin" 
-                className="px-4 py-2 text-sm text-white rounded-full border border-white" 
-                style={{
-                    background: 'linear-gradient(270deg, rgba(234, 61, 52, 0.7) 0%, rgba(31, 185, 232, 0.7) 98.7%)'
-                }}
-      >
+              href="/signin"
+              className="px-4 py-2 text-sm text-white rounded-full border border-white"
+              style={{
+                background: 'linear-gradient(270deg, rgba(234, 61, 52, 0.7) 0%, rgba(31, 185, 232, 0.7) 98.7%)'
+              }}
+            >
               LogIn
             </Link>
             <Link
-                href="/signin" 
-                className="px-4 py-2 text-sm text-black rounded-full border border-white bg-white" 
-                
-      >
+              href="/signin"
+              className="px-4 py-2 text-sm text-black rounded-full border border-white bg-white"
+
+            >
               Register
             </Link>
           </div>
@@ -251,13 +265,15 @@ export default function NavigationMenu() {
                 className="w-full flex justify-between items-center px-4 py-3 font-medium text-gray-700"
               >
                 {menu.title}
-                <ChevronDown
-                  className={`h-5 w-5 transition ${mobileSubMenu === idx ? "rotate-180" : ""}`}
-                />
+                {menu?.items &&
+                  <ChevronDown
+                    className={`h-5 w-5 transition ${mobileSubMenu === idx ? "rotate-180" : ""}`}
+                  />
+                }
               </button>
 
               {/* MOBILE DROPDOWN */}
-              {mobileSubMenu === idx && (
+              {menu?.items && mobileSubMenu === idx && (
                 <div className="bg-gray-50">
                   {menu.items.map((item, itemIdx) => (
                     <div key={itemIdx} className="border-b">

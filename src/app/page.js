@@ -1,4 +1,5 @@
 import BenefitsAndRoles from "@/components/BenefitsAndRoles";
+import Footer from "@/components/common/Footer";
 import HeroSection from "@/components/common/HeroSection";
 import NavigationMenu from "@/components/common/NavigationMenuDemo";
 import DownloadApp from "@/components/DownloadApp";
@@ -44,6 +45,10 @@ export default function Home() {
 
       <div>
         <TransformForm />
+      </div>
+
+      <div>
+        <Footer />
       </div>
     </div>
   );
