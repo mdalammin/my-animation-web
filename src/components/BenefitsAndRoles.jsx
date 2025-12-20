@@ -21,7 +21,7 @@ import {
 } from "lucide-react";
 import PlatformSection from "./PlatformSection";
 
-export default function BenefitsAndRoles() {
+export default function BenefitsAndRoles({ isMenuSection }) {
     const [activeRole, setActiveRole] = useState("Principal");
 
     const roles = [
@@ -32,7 +32,7 @@ export default function BenefitsAndRoles() {
     ];
 
     return (
-        <div className="bg-[#0b0f19] text-white min-h-screen font-sans">
+        <div className="bg-transparent text-white font-sans">
             {/* -------------------- BENEFITS SECTION -------------------- */}
             <section className="py-16 mx-auto">
                 <div className="max-w-7xl mx-auto px-4 mb-12">
@@ -146,42 +146,45 @@ export default function BenefitsAndRoles() {
             </section>
 
             {/* -------------------- UNIFIED PLATFORM SECTION -------------------- */}
-            <section className="py-24 px-4 relative overflow-hidden">
-                {/* Background Mesh/Wave Effect */}
-                <div className="absolute inset-0 pointer-events-none">
-                    <svg className="absolute w-full h-full opacity-40" viewBox="0 0 100 100" preserveAspectRatio="none">
-                        {/* Red/Blue Mesh Lines - Simulated */}
-                        <path d="M0 20 Q 50 0 100 20" stroke="#ef4444" fill="transparent" strokeWidth="0.1" />
-                        <path d="M0 25 Q 50 5 100 25" stroke="#3b82f6" fill="transparent" strokeWidth="0.1" />
-                        <path d="M0 30 Q 50 10 100 30" stroke="#ef4444" fill="transparent" strokeWidth="0.1" />
-                        <path d="M0 35 Q 50 15 100 35" stroke="#3b82f6" fill="transparent" strokeWidth="0.1" />
+            {
+                isMenuSection &&
+                <section className="py-24 px-4 relative overflow-hidden">
+                    {/* Background Mesh/Wave Effect */}
+                    <div className="absolute inset-0 pointer-events-none">
+                        <svg className="absolute w-full h-full opacity-40" viewBox="0 0 100 100" preserveAspectRatio="none">
+                            {/* Red/Blue Mesh Lines - Simulated */}
+                            <path d="M0 20 Q 50 0 100 20" stroke="#ef4444" fill="transparent" strokeWidth="0.1" />
+                            <path d="M0 25 Q 50 5 100 25" stroke="#3b82f6" fill="transparent" strokeWidth="0.1" />
+                            <path d="M0 30 Q 50 10 100 30" stroke="#ef4444" fill="transparent" strokeWidth="0.1" />
+                            <path d="M0 35 Q 50 15 100 35" stroke="#3b82f6" fill="transparent" strokeWidth="0.1" />
 
-                        <path d="M0 40 Q 50 60 100 40" stroke="#ef4444" fill="transparent" strokeWidth="0.1" />
-                        <path d="M0 45 Q 50 65 100 45" stroke="#3b82f6" fill="transparent" strokeWidth="0.1" />
-                        <path d="M0 50 Q 50 70 100 50" stroke="#ef4444" fill="transparent" strokeWidth="0.1" />
+                            <path d="M0 40 Q 50 60 100 40" stroke="#ef4444" fill="transparent" strokeWidth="0.1" />
+                            <path d="M0 45 Q 50 65 100 45" stroke="#3b82f6" fill="transparent" strokeWidth="0.1" />
+                            <path d="M0 50 Q 50 70 100 50" stroke="#ef4444" fill="transparent" strokeWidth="0.1" />
 
-                        {/* Vertical-ish lines for mesh effect */}
-                        <path d="M20 0 Q 30 50 20 100" stroke="#ffffff" strokeOpacity="0.05" fill="transparent" strokeWidth="0.1" />
-                        <path d="M40 0 Q 50 50 40 100" stroke="#ffffff" strokeOpacity="0.05" fill="transparent" strokeWidth="0.1" />
-                        <path d="M60 0 Q 70 50 60 100" stroke="#ffffff" strokeOpacity="0.05" fill="transparent" strokeWidth="0.1" />
-                        <path d="M80 0 Q 90 50 80 100" stroke="#ffffff" strokeOpacity="0.05" fill="transparent" strokeWidth="0.1" />
-                    </svg>
-                    <div className="absolute inset-0 bg-gradient-to-t from-[#0b0f19] via-transparent to-[#0b0f19]"></div>
-                    <div className="absolute inset-0 bg-gradient-to-r from-[#0b0f19] via-transparent to-[#0b0f19]"></div>
-                </div>
+                            {/* Vertical-ish lines for mesh effect */}
+                            <path d="M20 0 Q 30 50 20 100" stroke="#ffffff" strokeOpacity="0.05" fill="transparent" strokeWidth="0.1" />
+                            <path d="M40 0 Q 50 50 40 100" stroke="#ffffff" strokeOpacity="0.05" fill="transparent" strokeWidth="0.1" />
+                            <path d="M60 0 Q 70 50 60 100" stroke="#ffffff" strokeOpacity="0.05" fill="transparent" strokeWidth="0.1" />
+                            <path d="M80 0 Q 90 50 80 100" stroke="#ffffff" strokeOpacity="0.05" fill="transparent" strokeWidth="0.1" />
+                        </svg>
+                        <div className="absolute inset-0 bg-gradient-to-t from-[#0b0f19] via-transparent to-[#0b0f19]"></div>
+                        <div className="absolute inset-0 bg-gradient-to-r from-[#0b0f19] via-transparent to-[#0b0f19]"></div>
+                    </div>
 
 
-                <div className="max-w-7xl mx-auto text-center mb-16 relative z-10">
-                    <h2 className="text-3xl md:text-4xl font-bold mb-4">
-                        A Powerful, Unified Platform for Every Role
-                    </h2>
-                    <p className="text-gray-400">
-                        Tailored tools and dashboard to empower everyone in your school
-                        community
-                    </p>
-                </div>
-                <PlatformSection />
-            </section>
+                    <div className="max-w-7xl mx-auto text-center mb-16 relative z-10">
+                        <h2 className="text-3xl md:text-4xl font-bold mb-4">
+                            A Powerful, Unified Platform for Every Role
+                        </h2>
+                        <p className="text-gray-400">
+                            Tailored tools and dashboard to empower everyone in your school
+                            community
+                        </p>
+                    </div>
+                    <PlatformSection />
+                </section>
+            }
         </div>
     );
 }

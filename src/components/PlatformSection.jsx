@@ -27,7 +27,7 @@ export default function PlatformSection() {
     ];
 
     return (
-        <div className="relative w-full py-20 px-4 overflow-hidden bg-[#0b0f19]">
+        <div className="relative w-full py-20 px-4 overflow-hidden bg-transparent">
 
             {/* Background Mesh/Wave Effect */}
             <div className="absolute inset-0 pointer-events-none">

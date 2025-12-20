@@ -11,7 +11,7 @@ export default function NavigationMenu() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [mobileSubMenu, setMobileSubMenu] = useState(null);
 
-  // ⭐ ADD URL FOR ALL ITEMS
+  //  ADD URL FOR ALL ITEMS
   const menuItems = [
     {
       title: "Home",
@@ -26,18 +26,26 @@ export default function NavigationMenu() {
       url: "/certification",
     },
     {
-      title: "Products",
-      url: "/products",
+      title: "Video Tutorials",
+      url: "/video-tutorials",
+    },
+    {
+      title: "Our Features",
+      url: "/our-features",
+    },
+    {
+      title: "Schooldeeds",
+      url: "/about-us",
       items: [
         {
-          name: "Analytics",
+          name: "About US",
           description: "Get insights from your data",
-          url: "/products/analytics",
+          url: "/about-us",
         },
         {
-          name: "Engagement",
+          name: "Contact Us",
           description: "Connect with your audience",
-          url: "/products/engagement",
+          url: "/contact-us",
           // subItems: [
           //   {
           //     name: "Email Marketing",
@@ -62,57 +70,19 @@ export default function NavigationMenu() {
           // ],
         },
         {
-          name: "Security",
+          name: "Clients",
           description: "Keep your data safe",
-          url: "/products/security",
+          url: "/clients",
         },
         {
-          name: "Integrations",
-          description: "Connect with other tools",
-          url: "/products/integrations",
-        },
-      ],
-    },
-    {
-      title: "Solutions",
-      url: "/solutions",
-      items: [
-        {
-          name: "Enterprise",
-          description: "For large organizations",
-          url: "/solutions/enterprise",
+          name: "Our Teams",
+          description: "Keep your data safe",
+          url: "/our-teams",
         },
         {
-          name: "Small Business",
-          description: "For growing teams",
-          url: "/solutions/small-business",
-        },
-        { name: "Startup", description: "For new ventures", url: "/solutions/startup" },
-      ],
-    },
-    {
-      title: "Resources",
-      url: "/resources",
-      items: [
-        {
-          name: "Documentation",
-          description: "Learn how to use our platform",
-          url: "/resources/documentation",
-        },
-        {
-          name: "API Reference",
-          description: "Complete API documentation",
-          url: "/resources/api-reference",
-        },
-        {
-          name: "Guides",
-          description: "Step-by-step tutorials",
-          url: "/resources/guides",
-        },
-        {
-          name: "Blog",
-          description: "Latest news and updates",
-          url: "/resources/blog",
+          name: "Careers",
+          description: "Keep your data safe",
+          url: "/careers",
         },
       ],
     },

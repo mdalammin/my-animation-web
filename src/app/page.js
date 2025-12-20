@@ -18,9 +18,9 @@ export default function Home() {
       </div>
 
       <div>
-        <HeroSection />
+        <HeroSection isImage="true" />
         <TrustedBySlider />
-        <BenefitsAndRoles />
+        <BenefitsAndRoles isMenuSection="true" />
       </div>
 
       <div>

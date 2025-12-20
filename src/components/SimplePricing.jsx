@@ -1,7 +1,7 @@
 import React from "react";
 import { Check, ArrowRight } from "lucide-react";
 
-export default function SimplePricing() {
+export default function SimplePricing({ showButton, centerButton }) {
     const plans = [
         {
             name: "MICRO",
@@ -82,26 +82,49 @@ export default function SimplePricing() {
                                     ))}
                                 </ul>
                             </div>
+
+                            {
+                                showButton &&
+                                <div className="flex justify-center bg-[#1f242c] py-6">
+                                    <button className="group relative px-8 py-3 rounded-full text-sm text-white font-medium overflow-hidden transition-all hover:bg-white/5">
+                                        {/* Gradient border using pseudo-element */}
+                                        <div className="absolute inset-0 rounded-full p-[0px]">
+                                            <div className="w-full h-full bg-gradient-to-r from-[#EA3D34] to-[#1FB9E8] rounded-full"></div>
+                                        </div>
+
+                                        {/* Content */}
+                                        <span className="relative z-10 flex items-center gap-2">
+                                            Explore all Features <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
+                                        </span>
+
+                                        {/* Button background (optional) */}
+                                        <div className="absolute inset-[1px] rounded-full bg-gray-900 group-hover:bg-gray-800/50 transition-colors"></div>
+                                    </button>
+                                </div>
+                            }
                         </div>
                     ))}
                 </div>
 
-                <div className="flex justify-center">
-                    <button className="group relative px-8 py-3 rounded-full text-sm text-white font-medium overflow-hidden transition-all hover:bg-white/5">
-                        {/* Gradient border using pseudo-element */}
-                        <div className="absolute inset-0 rounded-full p-[0px]">
-                            <div className="w-full h-full bg-gradient-to-r from-[#EA3D34] to-[#1FB9E8] rounded-full"></div>
-                        </div>
+                {
+                    !centerButton &&
+                    <div className="flex justify-center">
+                        <button className="group relative px-8 py-3 rounded-full text-sm text-white font-medium overflow-hidden transition-all hover:bg-white/5">
+                            {/* Gradient border using pseudo-element */}
+                            <div className="absolute inset-0 rounded-full p-[0px]">
+                                <div className="w-full h-full bg-gradient-to-r from-[#EA3D34] to-[#1FB9E8] rounded-full"></div>
+                            </div>
 
-                        {/* Content */}
-                        <span className="relative z-10 flex items-center gap-2">
-                            Explore all Features <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
-                        </span>
+                            {/* Content */}
+                            <span className="relative z-10 flex items-center gap-2">
+                                Explore all Features <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
+                            </span>
 
-                        {/* Button background (optional) */}
-                        <div className="absolute inset-[1px] rounded-full bg-gray-900 group-hover:bg-gray-800/50 transition-colors"></div>
-                    </button>
-                </div>
+                            {/* Button background (optional) */}
+                            <div className="absolute inset-[1px] rounded-full bg-gray-900 group-hover:bg-gray-800/50 transition-colors"></div>
+                        </button>
+                    </div>
+                }
             </div>
         </div>
     );
