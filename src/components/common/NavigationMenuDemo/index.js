@@ -5,7 +5,7 @@ import { ChevronDown, ChevronRight } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
 
-export default function NavigationMenu() {
+export default function NavigationMenu({ bgTransparent }) {
   const [openMenu, setOpenMenu] = useState(null);
   const [openSubMenu, setOpenSubMenu] = useState(null);
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -84,16 +84,21 @@ export default function NavigationMenu() {
           description: "Keep your data safe",
           url: "/careers",
         },
+        {
+          name: "Articles",
+          description: "Keep your data safe",
+          url: "/articles",
+        },
       ],
     },
     {
-      title: "Blogs",
-      url: "/blogs",
+      title: "Blog",
+      url: "/blog",
     },
   ];
 
   return (
-    <nav className="max-w-7xl mx-auto bg-[linear-gradient(0deg,rgba(0,0,0,0.1),rgba(0,0,0,0.1)),linear-gradient(106.76deg,rgba(31,185,232,0.2)_11.57%,rgba(222,70,70,0.2)_88.65%)] rounded-[20px]">
+    <nav className={`max-w-7xl mx-auto ${bgTransparent ? "bg-transparent" : "bg-[linear-gradient(0deg,rgba(0,0,0,0.1),rgba(0,0,0,0.1)),linear-gradient(106.76deg,rgba(31,185,232,0.2)_11.57%,rgba(222,70,70,0.2)_88.65%)]"}  rounded-[20px]`}>
       <div className=" px-4 sm:px-6 lg:px-8 ">
         <div className="flex items-center justify-between">
           {/* Logo */}
@@ -194,7 +199,7 @@ export default function NavigationMenu() {
           {/* Right Side Buttons */}
           <div className="hidden md:flex items-center space-x-3">
             <Link
-              href="/signin"
+              href="/login"
               className="px-4 py-2 text-sm text-white rounded-full border border-white"
               style={{
                 background: 'linear-gradient(270deg, rgba(234, 61, 52, 0.7) 0%, rgba(31, 185, 232, 0.7) 98.7%)'
@@ -203,7 +208,7 @@ export default function NavigationMenu() {
               LogIn
             </Link>
             <Link
-              href="/signin"
+              href="/register"
               className="px-4 py-2 text-sm text-black rounded-full border border-white bg-white"
 
             >

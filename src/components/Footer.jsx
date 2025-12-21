@@ -40,7 +40,7 @@ const Footer = () => {
                 <div className="lg:col-span-5 flex flex-col gap-8">
 
                     {/* Brand Card */}
-                    <div className="relative p-[1px] rounded-2xl bg-gradient-to-r from-red-500 via-purple-500 to-blue-500 w-fit">
+                    <div className="relative p-[1px] rounded-2xl bg-gradient-to-r from-[#EA3D34] to-[#1FB9E8] w-fit">
                         <div className="bg-[#1A1D26] rounded-2xl px-6 py-4 flex items-center gap-4 min-w-[300px]">
                             {/* Logo Shield Placeholder */}
                             <div className="w-12 h-12 relative flex-shrink-0">
