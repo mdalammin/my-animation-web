@@ -74,10 +74,10 @@ export default function SeeVideos() {
                 </div>
 
                 {/* Video Player Container */}
-                <div className="w-full max-w-[1124px] h-[500px] bg-black flex overflow-hidden shadow-2xl border border-gray-800">
+                <div className="w-full max-w-[1124px] bg-black flex flex-col lg:flex-row overflow-hidden shadow-2xl border border-gray-800 lg:h-[500px]">
 
                     {/* Main Video Player Area (Left) */}
-                    <div className="flex-1 bg-black relative">
+                    <div className="w-full lg:w-[350px] aspect-video lg:h-full lg:flex-1 bg-black relative">
                         <iframe
                             width="100%"
                             height="100%"
@@ -91,7 +91,7 @@ export default function SeeVideos() {
                     </div>
 
                     {/* Playlist Sidebar (Right) */}
-                    <div className="w-[360px] bg-[#1f1f1f] flex flex-col flex-shrink-0">
+                    <div className="w-full lg:w-[360px] bg-[#1f1f1f] flex flex-col flex-shrink-0 border-t lg:border-t-0 lg:border-l border-gray-700">
 
                         {/* Playlist Header */}
                         <div className="p-4 border-b border-gray-700">
@@ -103,7 +103,7 @@ export default function SeeVideos() {
                         </div>
 
                         {/* Playlist Items */}
-                        <div className="flex-1 overflow-y-auto custom-scrollbar">
+                        <div className="flex-1 overflow-y-auto max-h-[300px] lg:max-h-none custom-scrollbar">
                             {videos.map((video) => (
                                 <div
                                     key={video.id}

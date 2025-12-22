@@ -1,6 +1,6 @@
 import BenefitsAndRoles from '@/components/BenefitsAndRoles'
 import HeroSection from '@/components/common/HeroSection'
-import NavigationMenu from '@/components/common/NavigationMenuDemo'
+import NavigationMenu from '@/components/common/NavigationMenu'
 import HomeFaq from '@/components/HomeFaq'
 import SimplePricing from '@/components/SimplePricing'
 import Transformform from '@/components/TransformForm'

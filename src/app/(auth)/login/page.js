@@ -1,5 +1,5 @@
 import LoginForm from '@/components/authentication/LoginForm'
-import NavigationMenu from '@/components/common/NavigationMenuDemo'
+import NavigationMenu from '@/components/common/NavigationMenu'
 import React from 'react'
 
 export default function Login() {
@@ -9,7 +9,7 @@ export default function Login() {
                 <NavigationMenu />
             </div>
 
-            <div>
+            <div className=''>
                 <LoginForm />
             </div>
         </div>

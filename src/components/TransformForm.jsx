@@ -9,34 +9,34 @@ export default function Transformform() {
         <section className="bg-[#05070A] py-16 px-4 md:px-12 lg:px-24 flex justify-center items-center w-full">
             <div className="w-full max-w-7xl relative overflow-hidden rounded-[40px] p-[1px]">
                 {/* Main Content Container with Gradient Background */}
-                <div className=" bg-gradient-to-r from-[#0B3B4B] to-[#4B1A1A] rounded-[40px] p-8 md:p-16 lg:p-20">
+                <div className="bg-gradient-to-r from-[#0B3B4B] to-[#4B1A1A] rounded-[40px] p-6 sm:p-10 md:p-16 lg:p-20">
 
                     {/* Left Content */}
                     <div className=" h-full">
-                        <div>
-                            <h2 className="text-3xl md:text-5xl font-medium text-white mb-4 leading-tight">
+                        <div className="text-center md:text-left">
+                            <h2 className="text-3xl sm:text-4xl md:text-5xl font-medium text-white mb-4 leading-tight">
                                 Ready to transform your school operations?
                             </h2>
-                            <p className="text-gray-300 text-lg mb-12">
+                            <p className="text-gray-300 text-base sm:text-lg mb-8 md:mb-12">
                                 Schedule a demo today and get started within minutes.
                             </p>
                         </div>
 
                     </div>
 
-                    {/* Right Content - Form */}
-                    <div className="">
-                        <div className='flex flex-col md:flex-row justify-center items-center gap-3 '>
-                            <div className="relative w-[450px] h-[300px] mx-auto my-14 md:my-0">
-                                {/* Simplified Globe CSS representation */}
+                    <div className="w-full">
+                        <div className='flex flex-col lg:flex-row justify-center items-center gap-8 lg:gap-12'>
+                            <div className="relative w-full max-w-[300px] sm:max-w-[400px] aspect-square mx-auto mb-8 lg:mb-0">
+                                {/* Simplified Globe representation with Image */}
                                 <Image
                                     src={worldImage}
                                     alt='world'
-                                    className='absolute -top-20 left-0'
+                                    fill
+                                    className='object-contain'
+                                    priority
                                 />
-
                             </div>
-                            <div className=' w-[550px]'>
+                            <div className='w-full max-w-xl'>
                                 <form className="flex flex-col gap-4">
                                     <input
                                         type="text"

@@ -35,7 +35,7 @@ export default function NavigationMenu({ bgTransparent }) {
     },
     {
       title: "Schooldeeds",
-      url: "/about-us",
+      url: "#",
       items: [
         {
           name: "About US",
@@ -98,18 +98,20 @@ export default function NavigationMenu({ bgTransparent }) {
   ];
 
   return (
-    <nav className={`max-w-7xl mx-auto ${bgTransparent ? "bg-transparent" : "bg-[linear-gradient(0deg,rgba(0,0,0,0.1),rgba(0,0,0,0.1)),linear-gradient(106.76deg,rgba(31,185,232,0.2)_11.57%,rgba(222,70,70,0.2)_88.65%)]"}  rounded-[20px]`}>
+    <nav className={`fixed top-4 left-4 right-4 md:left-1/2 md:-translate-x-1/2 md:w-full max-w-7xl z-[100] transition-all duration-300 rounded-[20px] ${bgTransparent ? "bg-[linear-gradient(0deg,rgba(0,0,0,0.1),rgba(0,0,0,0.1)),linear-gradient(106.76deg,rgba(31,185,232,0.2)_11.57%,rgba(222,70,70,0.2)_88.65%)] backdrop-blur-[4px]" : "bg-[linear-gradient(0deg,rgba(0,0,0,0.1),rgba(0,0,0,0.1)),linear-gradient(106.76deg,rgba(31,185,232,0.2)_11.57%,rgba(222,70,70,0.2)_88.65%)] backdrop-blur-[4px]"}`}>
       <div className=" px-4 sm:px-6 lg:px-8 ">
         <div className="flex items-center justify-between">
           {/* Logo */}
-          <div className="relative w-[44px] h-[60px] mt-[10px] mb-[10px]" >
-            <Image
-              src="/logo.png"
-              alt="Next.js Logo"
-              fill
-              className="object-contain"
-              priority
-            />
+          <div className="relative w-[44px] h-[60px] my-2" >
+            <Link href="/">
+              <Image
+                src="/logo.png"
+                alt="Logo"
+                fill
+                className="object-contain"
+                priority
+              />
+            </Link>
           </div>
 
           {/* Desktop Navigation */}
@@ -220,9 +222,18 @@ export default function NavigationMenu({ bgTransparent }) {
           <div className="md:hidden">
             <button
               onClick={() => setMobileOpen(!mobileOpen)}
-              className="p-2 rounded-md text-gray-700 hover:bg-gray-100"
+              className="p-2 rounded-md text-white hover:bg-white/10 transition-colors"
+              aria-label="Toggle menu"
             >
-              {mobileOpen ? "✖" : "☰"}
+              {mobileOpen ? (
+                <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                </svg>
+              ) : (
+                <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+              )}
             </button>
           </div>
         </div>
@@ -230,49 +241,93 @@ export default function NavigationMenu({ bgTransparent }) {
 
       {/* MOBILE MENU */}
       {mobileOpen && (
-        <div className="md:hidden border-t border-gray-200">
-          {menuItems.map((menu, idx) => (
-            <div key={idx} className="border-b">
-              <button
-                onClick={() =>
-                  setMobileSubMenu(mobileSubMenu === idx ? null : idx)
-                }
-                className="w-full flex justify-between items-center px-4 py-3 font-medium text-gray-700"
-              >
-                {menu.title}
-                {menu?.items &&
-                  <ChevronDown
-                    className={`h-5 w-5 transition ${mobileSubMenu === idx ? "rotate-180" : ""}`}
-                  />
-                }
-              </button>
+        <div className="md:hidden bg-black/80 backdrop-blur-lg rounded-b-[20px] border-t border-white/10 animate-fadeSlide max-h-[calc(100vh-100px)] overflow-y-auto no-scrollbar">
+          <div className="p-4 space-y-1">
+            {menuItems.map((menu, idx) => (
+              <div key={idx} className="rounded-xl overflow-hidden">
+                <div
+                  onClick={() => setMobileSubMenu(mobileSubMenu === idx ? null : idx)}
+                  className="flex items-center justify-between hover:bg-white/10 transition-colors">
+                  <Link
+                    href={menu?.url}
+                    className="flex-grow px-4 py-3 text-white font-medium "
+                    onClick={() => !menu.items && setMobileOpen(false)}
+                  >
+                    {menu.title}
+                  </Link>
+                  {menu?.items && (
+                    <button
+                      onClick={() => setMobileSubMenu(mobileSubMenu === idx ? null : idx)}
+                      className="px-4 py-3 text-white"
+                    >
+                      <ChevronDown
+                        className={`h-5 w-5 transition-transform duration-300 ${mobileSubMenu === idx ? "rotate-180" : ""}`}
+                      />
+                    </button>
+                  )}
+                </div>
 
-              {/* MOBILE DROPDOWN */}
-              {menu?.items && mobileSubMenu === idx && (
-                <div className="bg-gray-50">
-                  {menu.items.map((item, itemIdx) => (
-                    <div key={itemIdx} className="border-b">
-                      <Link href={item.url} className="block px-6 py-3 text-gray-700">
+                {/* Only Icon click and dropdown Open */}
+
+                {/* <div className="flex items-center justify-between">
+                  <Link
+                    href={menu.url}
+                    className="flex-grow px-4 py-3 text-white font-medium hover:bg-white/10 transition-colors"
+                    onClick={() => !menu.items && setMobileOpen(false)}
+                  >
+                    {menu.title}
+                  </Link>
+                  {menu?.items && (
+                    <button
+                      onClick={() => setMobileSubMenu(mobileSubMenu === idx ? null : idx)}
+                      className="px-4 py-3 text-white hover:bg-white/10 transition-colors"
+                    >
+                      <ChevronDown
+                        className={`h-5 w-5 transition-transform duration-300 ${mobileSubMenu === idx ? "rotate-180" : ""}`}
+                      />
+                    </button>
+                  )}
+                </div> */}
+
+                {/* MOBILE DROPDOWN */}
+                {menu?.items && mobileSubMenu === idx && (
+                  <div className="bg-white/5 mx-2 mb-2 rounded-lg py-1 border border-white/5">
+                    {menu.items.map((item, itemIdx) => (
+                      <Link
+                        key={itemIdx}
+                        href={item.url}
+                        className="block px-6 py-3 text-white/80 hover:text-white hover:bg-white/5 transition-colors text-sm"
+                        onClick={() => setMobileOpen(false)}
+                      >
                         {item.name}
                       </Link>
+                    ))}
+                  </div>
+                )}
+              </div>
+            ))}
 
-                      {/* MOBILE SUB SUB MENU */}
-                      {item.subItems &&
-                        item.subItems.map((sub, sIdx) => (
-                          <Link
-                            key={sIdx}
-                            href={sub.url}
-                            className="block px-10 py-2 text-gray-500"
-                          >
-                            • {sub.name}
-                          </Link>
-                        ))}
-                    </div>
-                  ))}
-                </div>
-              )}
+            {/* Mobile Auth Buttons */}
+            <div className="grid grid-cols-2 gap-3 pt-4 border-t border-white/10">
+              <Link
+                href="/login"
+                className="flex items-center justify-center px-4 py-3 text-sm text-white rounded-full border border-white/20"
+                style={{
+                  background: 'linear-gradient(270deg, rgba(234, 61, 52, 0.7) 0%, rgba(31, 185, 232, 0.7) 98.7%)'
+                }}
+                onClick={() => setMobileOpen(false)}
+              >
+                LogIn
+              </Link>
+              <Link
+                href="/register"
+                className="flex items-center justify-center px-4 py-3 text-sm text-black rounded-full bg-white font-semibold"
+                onClick={() => setMobileOpen(false)}
+              >
+                Register
+              </Link>
             </div>
-          ))}
+          </div>
         </div>
       )}
     </nav>

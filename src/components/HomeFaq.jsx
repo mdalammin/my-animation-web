@@ -79,7 +79,7 @@ export default function HomeFaq() {
                         return (
                             <div
                                 key={index}
-                                className="group cursor-pointer bg-[#FFFFFF1A] rounded-3xl"
+                                className="group cursor-pointer bg-[#FFFFFF1A] rounded-[35px]"
                                 onClick={() => setOpenIndex(isOpen ? -1 : index)}
                             >
                                 {/* Question - Rounded Full (Pill) with Gradient Border */}
@@ -108,7 +108,7 @@ export default function HomeFaq() {
                                             transition={{ duration: 0.3, ease: "easeInOut" }}
                                             className="overflow-hidden"
                                         >
-                                            <p className="text-gray-100 leading-relaxed text-sm md:text-base px-6 py-4 ">
+                                            <p className="text-gray-100 leading-relaxed text-sm md:text-base px-6 py-7 ">
                                                 {faq.answer}
                                             </p>
                                         </motion.div>

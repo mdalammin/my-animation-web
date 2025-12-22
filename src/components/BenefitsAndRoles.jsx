@@ -45,10 +45,10 @@ export default function BenefitsAndRoles({ isMenuSection }) {
                 </div>
 
                 {/* Main Grid Container */}
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 min-h-[500px] max-w-7xl mx-auto">
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 max-w-7xl mx-auto border-gray-800/30">
 
                     {/* ---------------- CARD 1: Access Anywhere ---------------- */}
-                    <div className="relative group overflow-hidden border-r border-gray-800/30 w-[325px] h-[345px] z-10">
+                    <div className="relative group overflow-hidden border-b sm:border-r lg:border-r border-gray-800/30 w-full h-[350px] z-10">
                         {/* Background Image */}
                         <div
                             className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110"
@@ -74,7 +74,7 @@ export default function BenefitsAndRoles({ isMenuSection }) {
                     </div>
 
                     {/* ---------------- CARD 2: Unlimited Users ---------------- */}
-                    <div className="relative group overflow-hidden border-r border-gray-800/30 w-[325px] h-[345px] z-20">
+                    <div className="relative group overflow-hidden border-b sm:border-b lg:border-b-0 lg:border-r border-gray-800/30 w-full h-[350px] z-20">
                         {/* Background Image */}
                         <div
                             className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110"
@@ -83,21 +83,21 @@ export default function BenefitsAndRoles({ isMenuSection }) {
 
                         {/* Overlay: Left-side Teal/Cyan curve effect 
                             Using a radial gradient shifted to the left to simulate the curve */}
-                        <div className="absolute top-0 left-0 w-[60%] h-[50%] rounded-br-[81px] bg-[linear-gradient(0deg,rgba(30,30,30,0.4),rgba(30,30,30,0.4)),linear-gradient(106.76deg,rgba(31,185,232,0.4)_11.57%,rgba(222,70,70,0.4)_88.65%)] backdrop-blur-[30px] opacity-95"></div>
+                        <div className="absolute top-0 left-0 w-[50%] h-[60%] sm:w-[50%] sm:h-[50%] md:w-[50%] md:h-[50%] lg:w-[55%] lg:h-[50%] rounded-br-[81px] bg-[linear-gradient(0deg,rgba(30,30,30,0.4),rgba(30,30,30,0.4)),linear-gradient(106.76deg,rgba(31,185,232,0.4)_11.57%,rgba(222,70,70,0.4)_88.65%)] backdrop-blur-[30px] opacity-95"></div>
 
                         {/* Content */}
-                        <div className="absolute bottom-23 left-7 z-10 h-full flex flex-col justify-center items-center text-center p-6">
+                        <div className="absolute -top-36 -left-48 sm:-top-22 sm:-left-45 md:-top-22 md:-left-55 lg:-top-52 lg:-left-35 inset-0 z-10 flex flex-col justify-center items-center text-center p-6 sm:pb-32 lg:pb-0">
                             <div className="mb-2">
-                                <Users size={40} strokeWidth={1.5} />
+                                <Users size={30} strokeWidth={1.5} />
                             </div>
-                            <h3 className="text-lg font-semibold leading-tight">
+                            <h3 className="text-md font-semibold leading-tight">
                                 Unlimited<br />Users
                             </h3>
                         </div>
                     </div>
 
                     {/* ---------------- CARD 3: Transparent Pricing ---------------- */}
-                    <div className="relative group overflow-hidden border-r border-gray-800/30 w-[325px] h-[345px] z-30">
+                    <div className="relative group overflow-hidden border-b sm:border-r lg:border-r lg:border-b-0 border-gray-800/30 w-full h-[350px] z-30">
                         {/* Background Image */}
                         <div
                             className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110"
@@ -106,21 +106,21 @@ export default function BenefitsAndRoles({ isMenuSection }) {
 
                         {/* Overlay: Right-side Blue curve effect 
                              Simulating the "bubble" from the right side */}
-                        <div className="absolute top-0 right-0 w-[60%] h-[50%] rounded-bl-[81px] bg-[linear-gradient(0deg,rgba(30,30,30,0.4),rgba(30,30,30,0.4)),linear-gradient(106.76deg,rgba(31,185,232,0.4)_11.57%,rgba(222,70,70,0.4)_88.65%)] backdrop-blur-[30px] opacity-95"></div>
+                        <div className="absolute top-0 right-0 w-[50%] h-[60%] sm:w-[50%] sm:h-[50%] md:w-[50%] md:h-[50%] lg:w-[55%] lg:h-[50%] rounded-bl-[81px] bg-[linear-gradient(0deg,rgba(30,30,30,0.4),rgba(30,30,30,0.4)),linear-gradient(106.76deg,rgba(31,185,232,0.4)_11.57%,rgba(222,70,70,0.4)_88.65%)] backdrop-blur-[30px] opacity-95"></div>
 
                         {/* Content */}
-                        <div className="absolute -top-24 right-4 z-10 h-full flex flex-col justify-center items-center text-center p-6">
+                        <div className="absolute -top-36 -right-48 sm:-top-75 sm:-right-50 md:-top-75 md:-right-60 lg:-top-42 lg:-right-37  inset-0 z-10 flex flex-col justify-center items-center text-center p-6 sm:pt-32 lg:pt-0">
                             <div className="mb-2">
-                                <Wallet size={40} strokeWidth={1.5} />
+                                <Wallet size={30} strokeWidth={1.5} />
                             </div>
-                            <h3 className="text-lg font-semibold leading-tight">
+                            <h3 className="text-md font-semibold leading-tight">
                                 Transparent<br />Pricing
                             </h3>
                         </div>
                     </div>
 
                     {/* ---------------- CARD 4: Full-feature Included ---------------- */}
-                    <div className="relative group overflow-hidden w-[325px] h-[345px] z-90">
+                    <div className="relative group overflow-hidden w-full h-[350px] z-40">
                         {/* Background Image */}
                         <div
                             className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110"
@@ -128,15 +128,15 @@ export default function BenefitsAndRoles({ isMenuSection }) {
                         ></div>
 
                         {/* Overlay: Bottom-Right Rounded Shape */}
-                        <div className="absolute bottom-0 right-0 w-[60%] h-[50%] rounded-tl-[81px] bg-[linear-gradient(0deg,rgba(30,30,30,0.4),rgba(30,30,30,0.4)),linear-gradient(106.76deg,rgba(31,185,232,0.4)_11.57%,rgba(222,70,70,0.4)_88.65%)] backdrop-blur-[30px] opacity-95"></div>
+                        <div className="absolute bottom-0 right-0 w-[50%] h-[60%] sm:w-[50%] sm:h-[50%] md:w-[50%] md:h-[50%] lg:w-[55%] lg:h-[50%] rounded-tl-[81px] bg-[linear-gradient(0deg,rgba(30,30,30,0.4),rgba(30,30,30,0.4)),linear-gradient(106.76deg,rgba(31,185,232,0.4)_11.57%,rgba(222,70,70,0.4)_88.65%)] backdrop-blur-[30px] opacity-95"></div>
 
 
                         {/* Content */}
-                        <div className="absolute right-2 top-6 z-10 h-full flex flex-col justify-end items-center text-center p-8 pb-16">
+                        <div className="absolute -bottom-36 -right-48 sm:-bottom-45 sm:-right-50 md:-bottom-45 md:-right-60 lg:-bottom-42 lg:-right-37 inset-0 z-10 flex flex-col justify-center items-center text-center p-8">
                             <div className="mb-2">
-                                <Settings size={40} strokeWidth={1.5} />
+                                <Settings size={30} strokeWidth={1.5} />
                             </div>
-                            <h3 className="text-lg font-semibold leading-tight">
+                            <h3 className="text-md font-semibold leading-tight">
                                 Full-feature<br />Included
                             </h3>
                         </div>

@@ -98,7 +98,7 @@ const HeroSection = ({ isImage }) => {
       </div>
 
       {/* Sidebar (Socials) */}
-      <div className={`hidden lg:flex absolute left-25 ${isImage ? "bottom-40" : "-bottom-30"}  -translate-y-1/2 flex-col items-center gap-8 z-50`}>
+      <div className={`hidden lg:flex absolute left-25 ${isImage ? "bottom-0" : "-bottom-30"}  -translate-y-1/2 flex-col items-center gap-8 z-50`}>
         {/* <div className="w-[1px] h-24 bg-gray-700"></div> */}
         <span className="text-gray-500 uppercase tracking-[0.2em] text-xs [writing-mode:vertical-lr] rotate-180">
           Follow Us

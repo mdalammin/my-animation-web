@@ -14,7 +14,7 @@ export default function DownloadApp() {
                 >
 
                     {/* Text Content */}
-                    <div className="z-10 md:w-1/2 text-center md:text-left mb-10 md:mb-0">
+                    <div className="z-10 md:w-1/2 text-center md:text-center lg:text-left mb-10 md:mb-0">
                         <h2 className="text-4xl lg:text-5xl font-semibold text-white mb-4">
                             Download Schooldeeds
                         </h2>
@@ -22,7 +22,7 @@ export default function DownloadApp() {
                             Try it yourself and discover the ease
                         </p>
 
-                        <div className="flex gap-4 justify-start items-center">
+                        <div className="flex flex-col lg:flex-row gap-4 justify-start items-center">
                             {/* Play Store Button */}
                             <button className="flex items-center gap-3 px-6 py-3 rounded-full bg-[linear-gradient(270deg,#EA3D34_0%,#1FB9E8_98.7%)] hover:brightness-110 transition-all text-white shadow-lg">
                                 <svg

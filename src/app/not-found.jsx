@@ -3,7 +3,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { ArrowLeft } from "lucide-react";
 import errorImage from "@/assets/404.png";
-import NavigationMenu from "@/components/common/NavigationMenuDemo";
+import NavigationMenu from "@/components/common/NavigationMenu";
 
 export default function NotFound() {
     return (
