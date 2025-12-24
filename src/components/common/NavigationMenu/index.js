@@ -98,7 +98,7 @@ export default function NavigationMenu({ bgTransparent }) {
   ];
 
   return (
-    <nav className={`fixed top-4 left-4 right-4 md:left-1/2 md:-translate-x-1/2 md:w-full max-w-7xl z-[100] transition-all duration-300 rounded-[20px] ${bgTransparent ? "bg-[linear-gradient(0deg,rgba(0,0,0,0.1),rgba(0,0,0,0.1)),linear-gradient(106.76deg,rgba(31,185,232,0.2)_11.57%,rgba(222,70,70,0.2)_88.65%)] backdrop-blur-[4px]" : "bg-[linear-gradient(0deg,rgba(0,0,0,0.1),rgba(0,0,0,0.1)),linear-gradient(106.76deg,rgba(31,185,232,0.2)_11.57%,rgba(222,70,70,0.2)_88.65%)] backdrop-blur-[4px]"}`}>
+    <nav className={`fixed top-4 left-4 right-4 md:left-1/2 md:-translate-x-1/2 md:w-full max-w-7xl z-[100] transition-all duration-300 rounded-[20px] ${bgTransparent ? "bg-[linear-gradient(0deg,rgba(0,0,0,0.1),rgba(0,0,0,0.1)),linear-gradient(106.76deg,rgba(31,185,232,0.2)_11.57%,rgba(222,70,70,0.2)_88.65%)] backdrop-blur-[30px]" : "bg-[linear-gradient(0deg,rgba(0,0,0,0.1),rgba(0,0,0,0.1)),linear-gradient(106.76deg,rgba(31,185,232,0.2)_11.57%,rgba(222,70,70,0.2)_88.65%)] backdrop-blur-[30px]"}`}>
       <div className=" px-4 sm:px-6 lg:px-8 ">
         <div className="flex items-center justify-between">
           {/* Logo */}
@@ -139,7 +139,7 @@ export default function NavigationMenu({ bgTransparent }) {
                 {/* MAIN DROPDOWN */}
                 {menu?.items && openMenu === idx && (
                   <div
-                    className="absolute left-0 top-full w-36 bg-white/10 backdrop-blur-sm rounded-[20px] shadow-lg py-2 z-50 animate-fadeSlide"
+                    className="absolute left-0 top-full w-36 bg-[#1a1f2e] backdrop-blur-sm rounded-[20px] shadow-lg py-2 z-50 animate-fadeSlide"
                     onMouseEnter={() => setOpenMenu(idx)}
                   >
                     {menu?.items &&
