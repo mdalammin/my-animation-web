@@ -134,12 +134,6 @@ const organizations = [
         logoText: "Delhi Logo",
     },
     {
-        id: 20,
-        name: "Delhi",
-        location: "Delhi",
-        logoText: "Delhi Logo",
-    },
-    {
         id: 21,
         name: "Delhi",
         location: "Delhi",
@@ -147,6 +141,12 @@ const organizations = [
     },
     {
         id: 22,
+        name: "Delhi",
+        location: "Delhi",
+        logoText: "Delhi Logo",
+    },
+    {
+        id: 23,
         name: "Delhi",
         location: "Delhi",
         logoText: "Delhi Logo",

@@ -19,10 +19,10 @@ export default function PlatformSection() {
     const [activeRole, setActiveRole] = useState("Principal");
 
     const roles = [
-        { name: "Principal", icon: <LayoutDashboard size={30} /> },
-        { name: "Teacher", icon: <BookOpen size={30} /> },
-        { name: "Parents", icon: <User size={30} /> },
-        { name: "Accountant", icon: <Calculator size={30} /> },
+        { name: "Principal", icon: <LayoutDashboard size={25} /> },
+        { name: "Teacher", icon: <BookOpen size={25} /> },
+        { name: "Parents", icon: <User size={25} /> },
+        { name: "Accountant", icon: <Calculator size={25} /> },
         // { name: "Students", icon: <User size={34} /> },
     ];
 
@@ -73,7 +73,7 @@ export default function PlatformSection() {
                             <button
                                 key={role.name}
                                 onClick={() => setActiveRole(role.name)}
-                                className={`py-1 flex-1 flex flex-col items-center justify-center gap-3 transition-colors duration-300 relative group
+                                className={`py-1 flex-1 flex flex-col items-center justify-center gap-2 transition-colors duration-300 relative group
                                     ${activeRole === role.name ? "bg-transparent text-white" : "bg-[#0a0c10] text-gray-500 hover:text-gray-300"}`}
                             >
                                 <div className={`p-3 rounded-xl transition-all duration-300 ${activeRole === role.name ? "bg-white/10" : "group-hover:bg-white/5"}`}>

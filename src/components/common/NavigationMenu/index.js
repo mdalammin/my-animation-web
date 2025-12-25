@@ -202,7 +202,7 @@ export default function NavigationMenu({ bgTransparent }) {
           <div className="hidden md:flex items-center space-x-3">
             <Link
               href="/login"
-              className="px-4 py-2 text-sm text-white rounded-full border border-white"
+              className="px-4 py-2 text-sm text-white rounded-full"
               style={{
                 background: 'linear-gradient(270deg, rgba(234, 61, 52, 0.7) 0%, rgba(31, 185, 232, 0.7) 98.7%)'
               }}
@@ -211,11 +211,13 @@ export default function NavigationMenu({ bgTransparent }) {
             </Link>
             <Link
               href="/register"
-              className="px-4 py-2 text-sm text-black rounded-full border border-white bg-white"
-
+              className="group inline-block rounded-full p-[1px] bg-gradient-to-r from-[#EA3D34] to-[#1FB9E8]"
             >
-              Register
+              <span className="group block px-4 py-2 text-sm text-white rounded-full bg-gray-900 group-hover:bg-white group-hover:text-black">
+                Register
+              </span>
             </Link>
+
           </div>
 
           {/* Mobile Toggle */}

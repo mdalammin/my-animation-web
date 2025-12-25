@@ -2,37 +2,80 @@
 import React, { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { ChevronDown, ArrowRight } from 'lucide-react'
+import ApplyNowModal from './ApplyNowModal'
 
 const faqs = [
     {
-        question: "What is special about Schooldeeds?",
-        answer: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
+        id: 1,
+        question: "Software Developer – Full Stack (React / Node.js)",
+        answer: `<div>
+  <p className="text-gray-100 leading-relaxed mb-4">
+    Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+    Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
+    when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+  </p>
+</div>
+`
     },
     {
-        question: "What is special about Schooldeeds?",
-        answer: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s."
+        id: 2,
+        question: "Mobile App Developer (Flutter / React Native)",
+        answer: `<div>
+  <p className="text-gray-100 leading-relaxed mb-4">
+    Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+    Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
+    when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+  </p>
+</div>
+`
     },
     {
-        question: "What is special about Schooldeeds?",
-        answer: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s."
+        id: 3,
+        question: "UI/UX Designer",
+        answer: `<div>
+  <p className="text-gray-100 leading-relaxed mb-4">
+    Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+    Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
+    when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+  </p>
+</div>
+`
     },
     {
-        question: "What is special about Schooldeeds?",
-        answer: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s."
+        id: 4,
+        question: "QA Tester / Software Quality Analyst",
+        answer: `<div>
+  <p className="text-gray-100 leading-relaxed mb-4">
+    Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+    Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
+    when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+  </p>
+</div>
+`
     },
     {
-        question: "What is special about Schooldeeds?",
-        answer: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s."
+        id: 5,
+        question: "Customer Support Executive",
+        answer: `<div>
+  <p className="text-gray-100 leading-relaxed mb-4">
+    Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+    Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
+    when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+  </p>
+</div>
+`
     }
 ]
 
 export default function CareersFaq() {
 
     const [openIndex, setOpenIndex] = useState(0)
+    const [isModalOpen, setIsModalOpen] = useState(false)
+    const [selectedJob, setSelectedJob] = useState('')
 
     return (
         <div className='bg-[linear-gradient(132.62deg,rgba(31,185,232,0.1)_0%,rgba(222,70,70,0.1)_100%)]'>
-            <div className='pt-10'>
+            <div className='pt-10 mx-4'>
                 <div className='text-center text-gray-200'>
                     <h2 className='text-3xl font-semibold mb-3'>Openings at Schooldeeds!</h2>
                     <p>You’ll be part of a supportive environment that values innovation, continuous learning, and the freedom to take ownership of your work.</p>
@@ -45,7 +88,7 @@ export default function CareersFaq() {
                         return (
                             <div
                                 key={index}
-                                className="group cursor-pointer bg-[#FFFFFF1A] rounded-3xl"
+                                className=" bg-[#FFFFFF1A] rounded-4xl"
                                 onClick={() => setOpenIndex(isOpen ? -1 : index)}
                             >
                                 {/* Question - Rounded Full (Pill) with Gradient Border */}
@@ -74,9 +117,33 @@ export default function CareersFaq() {
                                             transition={{ duration: 0.3, ease: "easeInOut" }}
                                             className="overflow-hidden"
                                         >
-                                            <p className="text-gray-100 leading-relaxed text-sm md:text-base px-6 py-4 ">
-                                                {faq.answer}
-                                            </p>
+                                            <p
+                                                className="text-gray-100 leading-relaxed text-sm md:text-base px-6 mt-4"
+                                                dangerouslySetInnerHTML={{ __html: faq.answer }}
+                                            />
+
+                                            <button
+                                                onClick={() => {
+                                                    setSelectedJob(faq.question)
+                                                    setIsModalOpen(true)
+                                                }}
+                                                className="group relative mx-6 my-4 px-8 py-3 rounded-full text-sm text-white font-medium overflow-hidden transition-all hover:bg-white/5 cursor-pointer"
+                                            >
+                                                {/* Gradient border */}
+                                                <div className="absolute inset-0 rounded-full p-[0px]">
+                                                    <div className="w-full h-full bg-gradient-to-r from-[#EA3D34] to-[#1FB9E8] rounded-full"></div>
+                                                </div>
+
+                                                {/* Button background */}
+                                                <div className="absolute inset-[1px] rounded-full bg-transparent group-hover:bg-gray-800/50 transition-colors"></div>
+
+                                                {/* Content */}
+                                                <span className="relative z-10 flex items-center gap-2">
+                                                    Apply Now
+                                                    <span className="inline-block transition-transform group-hover:translate-x-1">→</span>
+                                                </span>
+                                            </button>
+
                                         </motion.div>
                                     )}
                                 </AnimatePresence>
@@ -85,6 +152,12 @@ export default function CareersFaq() {
                     })}
                 </div>
             </div>
+
+            <ApplyNowModal
+                isOpen={isModalOpen}
+                onClose={() => setIsModalOpen(false)}
+                jobTitle={selectedJob}
+            />
         </div>
     )
 }

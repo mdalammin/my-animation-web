@@ -45,7 +45,7 @@ const HeroSection = ({ isImage }) => {
 
         {/* Buttons */}
         <div className="flex flex-col sm:flex-row gap-6 mb-20">
-          <button className="group relative px-8 py-3 rounded-full text-sm text-white font-medium overflow-hidden transition-all hover:bg-white/5">
+          <button className="group relative px-8 py-3 rounded-full text-sm text-white font-medium overflow-hidden transition-all hover:bg-white/5 cursor-pointer">
             {/* Gradient border using pseudo-element */}
             <div className="absolute inset-0 rounded-full p-[0px]">
               <div className="w-full h-full bg-gradient-to-r from-[#EA3D34] to-[#1FB9E8] rounded-full"></div>
@@ -60,7 +60,7 @@ const HeroSection = ({ isImage }) => {
             <div className="absolute inset-[1px] rounded-full bg-transparent group-hover:bg-gray-800/50 transition-colors"></div>
           </button>
 
-          <button className="group relative px-8 py-3 rounded-full text-sm text-white font-medium overflow-hidden transition-all hover:bg-white/5">
+          <button className="group relative px-8 py-3 rounded-full text-sm text-white font-medium overflow-hidden transition-all hover:bg-white/5 cursor-pointer">
             {/* Gradient border using pseudo-element */}
             <div className="absolute inset-0 rounded-full p-[0px]">
               <div className="w-full h-full bg-gradient-to-r from-[#EA3D34] to-[#1FB9E8] rounded-full"></div>
