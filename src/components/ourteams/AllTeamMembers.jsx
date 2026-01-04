@@ -1,17 +1,41 @@
 import React from "react";
 import Image from "next/image";
 import { Facebook, Linkedin } from "lucide-react";
-import testimonial from "@/assets/testimonial.png";
+import GurditSingh from "@/assets/GurditSingh.png";
+import pritpalsingh from "@/assets/pritpalsingh.jpg";
+import rahulsingla from "@/assets/rahulsingla.jpg";
+import arshleen from "@/assets/arshleen2.jpg";
+import Link from "next/link";
 
 const teamMembers = [
-    { name: "Er. Gurdit Singh", role: "CEO" },
-    { name: "Er. Gurdit Singh", role: "CEO" },
-    { name: "Er. Gurdit Singh", role: "CEO" },
-    { name: "Er. Gurdit Singh", role: "CEO" },
-    { name: "Er. Gurdit Singh", role: "CEO" },
-    { name: "Er. Gurdit Singh", role: "CEO" },
-    { name: "Er. Gurdit Singh", role: "CEO" },
-    { name: "Er. Gurdit Singh", role: "CEO" },
+    {
+        name: "Er. Gurdit Singh",
+        role: "CEO",
+        img: GurditSingh,
+        link: "https://www.facebook.com/er.gurdit"
+    },
+    {
+        name: "Pritpal Singh",
+        role: "Senior Developer",
+        img: pritpalsingh,
+        link: "https://www.facebook.com/pritpalsingh.in"
+    },
+    {
+        name: "Rahul Singla",
+        role: "Content Writer",
+        img: rahulsingla,
+        link: "https://www.facebook.com/rahul.singla.71697"
+    },
+    {
+        name: "Arshleen Kaur",
+        role: "QA tester",
+        img: arshleen,
+        link: "https://www.facebook.com/arsh.kaur.98871174"
+    },
+    // { name: "Er. Gurdit Singh", role: "CEO" },
+    // { name: "Er. Gurdit Singh", role: "CEO" },
+    // { name: "Er. Gurdit Singh", role: "CEO" },
+    // { name: "Er. Gurdit Singh", role: "CEO" },
 ];
 
 export default function AllTeamMembers() {
@@ -39,26 +63,24 @@ export default function AllTeamMembers() {
                         {/* Gradient Border Wrapper (DEFAULT) */}
                         <div
                             className="
-                relative p-[1px] rounded-3xl mb-4
-                bg-gradient-to-r from-[#EA3D34] to-[#1FB9E8]
-                transition-all duration-300
-                transform group-hover:-translate-y-6
-                group-hover:bg-none
-              "
+                                relative p-[1px] rounded-3xl mb-4
+                                bg-gradient-to-r from-[#EA3D34] to-[#1FB9E8]
+                                transition-all duration-300
+                                transform group-hover:-translate-y-6
+                                group-hover:bg-none"
                         >
                             {/* White border on hover */}
                             <div
                                 className="
-                  rounded-[22px] p-[2px]
-                  transition-all duration-300
-                  group-hover:bg-white
-                "
+                                rounded-[22px] p-[2px]
+                                 transition-all duration-300
+                               group-hover:bg-white "
                             >
                                 {/* Inner dark background */}
                                 <div className="bg-[#05070A] rounded-[20px] overflow-hidden">
                                     <div className="w-[250px] h-[250px] relative rounded-2xl overflow-hidden">
                                         <Image
-                                            src={testimonial}
+                                            src={member?.img}
                                             alt={member.name}
                                             fill
                                             className="object-cover"
@@ -77,8 +99,8 @@ export default function AllTeamMembers() {
                 group-hover:opacity-100 group-hover:translate-y-0
               "
                         >
-                            <Facebook className="cursor-pointer hover:text-white transition-colors" />
-                            <Linkedin className="cursor-pointer hover:text-white transition-colors" />
+                            <Link href={member?.link}><Facebook className="cursor-pointer hover:text-white transition-colors" /></Link>
+                            <Link href={'#'}><Linkedin className="cursor-pointer hover:text-white transition-colors" /></Link>
                         </div>
 
                         {/* Name & Role */}

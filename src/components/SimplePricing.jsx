@@ -4,7 +4,7 @@ import { Check, ArrowRight } from "lucide-react";
 export default function SimplePricing({ showButton, centerButton }) {
     const plans = [
         {
-            name: "MICRO",
+            name: "Micro",
             price: "25000",
             description: "Excluding GST 18%",
         },
@@ -26,6 +26,10 @@ export default function SimplePricing({ showButton, centerButton }) {
         "Attendance Records",
         "Exam Records",
         "Visitor Records",
+        "Student Records",
+        "Books Management",
+        "Transportation Management",
+        "Accounts Management",
     ];
 
     return (
@@ -57,8 +61,8 @@ export default function SimplePricing({ showButton, centerButton }) {
                                     {plan.name}
                                 </h3>
                                 <div className="text-white z-10">
-                                    <span className="text-2xl font-bold italic">{plan.price}/-</span>{" "}
-                                    <span className="text-xl italic font-medium">Per Year</span>
+                                    <span className="text-2xl font-bold italic">{plan.price}/</span>{" "}
+                                    <span className="text-xl italic font-medium">1Year</span>
                                 </div>
                                 <p className="text-gray-300 text-sm mt-1 z-10">{plan.description}</p>
                             </div>

@@ -2,7 +2,7 @@
 
 import React, { useState } from "react";
 import { ArrowLeft, ArrowRight, Quote } from "lucide-react";
-import img from "@/assets/testimonial.png";
+import GurditSingh from "@/assets/GurditSingh.png";
 import Image from "next/image";
 
 const testimonials = [
@@ -10,21 +10,21 @@ const testimonials = [
         id: 1,
         name: "Jay Shah",
         title: "Education Minister",
-        image: img,
+        image: GurditSingh,
         quote: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
     },
     {
         id: 2,
         name: "Sarah Johnson",
         title: "School Principal",
-        image: img,
+        image: GurditSingh,
         quote: "Schooldeeds has revolutionized how we manage our administrative tasks. The platform is intuitive, powerful, and has saved us countless hours of work. Highly recommended for any educational institution.",
     },
     {
         id: 3,
         name: "Michael Chen",
         title: "IT Administrator",
-        image: img,
+        image: GurditSingh,
         quote: "The technical support and stability of the platform are outstanding. Integration was smooth, and the feature set covers everything we need from student tracking to financial management.",
     }
 ];

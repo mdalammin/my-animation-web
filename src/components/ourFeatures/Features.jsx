@@ -3,33 +3,33 @@ import { BarChart3, LayoutDashboard } from 'lucide-react'
 
 const features = [
     {
-        title: "Realtime Analytics",
-        description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+        title: "Monitor Activities",
+        description: "The heads of the heirarchy can trace every step of their team, every updatation and pendencies.",
         icon: <BarChart3 className="text-[#3b82f6]" size={24} />
     },
     {
-        title: "Realtime Analytics",
-        description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+        title: "Transparent Accountancy",
+        description: "Head of the administration can keep a complete check on the accounts department and can rectify their mistakes.",
         icon: <BarChart3 className="text-[#3b82f6]" size={24} />
     },
     {
-        title: "Realtime Analytics",
-        description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+        title: "Maintain Records",
+        description: "All the records of every single student will be maintained, from homework assignments to fee slips. All the certificates will always be available in pdf format so that student's can always retain them without hassle.",
         icon: <BarChart3 className="text-[#3b82f6]" size={24} />
     },
     {
-        title: "Realtime Analytics",
-        description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+        title: "Parents Flexibilities",
+        description: "Parents will be able to see all the homework given, their ward's attendance records, his performance in tests and co-curricular activities.",
         icon: <BarChart3 className="text-[#3b82f6]" size={24} />
     },
     {
-        title: "Realtime Analytics",
-        description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+        title: "SMS Notifications",
+        description: "Parents will receive an SMS notification of absence and fee deposits.",
         icon: <BarChart3 className="text-[#3b82f6]" size={24} />
     },
     {
-        title: "Realtime Analytics",
-        description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+        title: "Global Control",
+        description: "Access your data form anywhere around the globe with complete security. Principals, Teachers and Students, everyone will have every access permitted to their account.",
         icon: <BarChart3 className="text-[#3b82f6]" size={24} />
     }
 ]
